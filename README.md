@@ -36,6 +36,10 @@ python scripts/train_food.py \
   --epochs 40 --batch-size 32
 ```
 
+## Model Weights
+
+[Food checkpoints](https://pan.baidu.com/s/1n5Q1YrkpnhkT_9cHwlXnYw) are available upon request. Please contact the authors for access.
+
 ## Evaluation
 
 ```bash
