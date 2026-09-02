@@ -32,7 +32,7 @@ class InfoMambaFoodClassifier(nn.Module):
         try:
             from mambavision import create_model
         except ImportError as exc:
-            raise ImportError("Install mambavision before running fine-tuning") from exc
+            raise ImportError("Install mambavision before training") from exc
         options: dict[str, object] = {"pretrained": pretrained}
         if checkpoint_path:
             options["model_path"] = checkpoint_path

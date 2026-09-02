@@ -17,6 +17,7 @@ workflows for visual and sequence classification tasks.
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
+pip install mambavision
 ```
 
 Install the compatible inference dependencies required by the released
@@ -38,12 +39,22 @@ python scripts/prepare_food11.py \
 
 See [Dataset Preparation](docs/DATASETS.md) for the complete layouts.
 
-### 3. Download Checkpoints
+### 3. Train
+
+```bash
+python scripts/train_food.py \
+  --data artifacts/data/Food-11 \
+  --output outputs/food11 \
+  --backbone mamba_vision_B_21k \
+  --epochs 40 --batch-size 32
+```
+
+### 4. Download Checkpoints
 
 Download the required checkpoint from [Releases](https://github.com/AhseoCho/InfoMamba/releases)
 and place it under `artifacts/`.
 
-### 4. Run Evaluation
+### 5. Run Evaluation
 
 ```bash
 # Food-11
@@ -74,10 +85,6 @@ InfoMamba/
 ├── LICENSE
 └── pyproject.toml
 ```
-
-## Food Fine-tuning
-
-See [Food Fine-tuning](docs/TRAINING_FOOD.md).
 
 ## Citation
 

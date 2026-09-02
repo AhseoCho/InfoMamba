@@ -1,10 +1,11 @@
-"""Fine-tune InfoMamba for Food classification."""
+"""Train InfoMamba for Food classification."""
 
 from __future__ import annotations
 
 import argparse
 import json
 import random
+import sys
 from pathlib import Path
 
 import torch
@@ -12,10 +13,8 @@ from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 
-try:
-    from training.infomamba_food import InfoMambaFoodClassifier
-except ModuleNotFoundError:
-    from infomamba_food import InfoMambaFoodClassifier
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from models.infomamba import InfoMambaFoodClassifier
 
 
 def parse_args() -> argparse.Namespace:
