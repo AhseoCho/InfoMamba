@@ -39,4 +39,3 @@ available.
 - Do not select a Food-11 checkpoint using the test split.
 - Keep raw files outside Git; `artifacts/` is intentionally ignored.
 - Record the prepared split counts and hashes in the released run manifest.
-- Follow the Food-101 duplicate-file disclosure in `DATA_AUDIT.md`.

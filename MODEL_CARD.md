@@ -17,7 +17,6 @@ classes. Both are computed across all examples, not averaged across batches.
 - [ ] Exact architecture and inference dependency version recorded.
 - [ ] Clean-environment command produces `metrics.json` and `predictions.csv`.
 - [ ] Dataset split count and class ordering match the config.
-- [ ] Food-101 duplicate-file decision and result are disclosed in `DATA_AUDIT.md`.
 - [ ] Third-party model and checkpoint redistribution terms have been reviewed.
 
 No result should be labelled as an InfoMamba result unless it was generated with
