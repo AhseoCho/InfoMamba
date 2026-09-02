@@ -82,7 +82,7 @@ InfoMamba/
 ├── src/                     # evaluation implementation
 ├── DATASETS.md
 ├── MODEL_CARD.md
-└── weights_manifest.json
+└── LICENSE
 ```
 
 ## Citation

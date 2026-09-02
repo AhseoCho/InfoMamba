@@ -13,7 +13,7 @@ classes. Both are computed across all examples, not averaged across batches.
 
 ## Release checklist
 
-- [ ] Public checkpoint URL and SHA-256 recorded in `weights_manifest.json`.
+- [ ] Released checkpoint assets are available from the GitHub Release.
 - [ ] Exact architecture and inference dependency version recorded.
 - [ ] Clean-environment command produces `metrics.json` and `predictions.csv`.
 - [ ] Dataset split count and class ordering match the config.
