@@ -72,13 +72,6 @@ python -m infomamba_food_eval.evaluate \
   --output outputs/food101
 ```
 
-## Results
-
-| Dataset | Top-1 | Top-5 |
-| --- | ---: | ---: |
-| Food-11 | 98.72 | 99.91 |
-| Food-101 | See released evaluation output |
-
 ## Repository Structure
 
 ```text
