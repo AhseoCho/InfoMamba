@@ -1,11 +1,5 @@
 # Third-party notices
 
-## External visual backbone
-
-Food fine-tuning uses [NVlabs/MambaVision](https://github.com/NVlabs/MambaVision)
-as an external dependency. Its source, checkpoints, and license remain subject
-to the upstream terms.
-
 ## Datasets and released artifacts
 
 This repository does not redistribute Food-11, Food-101, or any third-party

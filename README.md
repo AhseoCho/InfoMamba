@@ -75,10 +75,6 @@ InfoMamba/
 └── pyproject.toml
 ```
 
-## Food Fine-tuning
-
-See [Food Fine-tuning](docs/TRAINING_FOOD.md) for the Food-11 training command.
-
 ## Citation
 
 Citation metadata will be added with the accompanying paper release.
