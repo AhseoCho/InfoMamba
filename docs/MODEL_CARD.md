@@ -2,8 +2,8 @@
 
 ## Intended use
 
-Image classification evaluation on Food-11 and Food-101 only. This repository
-does not provide a training recipe.
+Image classification evaluation on Food-11 and Food-101. Food-11 fine-tuning
+is documented in [Food fine-tuning](TRAINING_FOOD.md).
 
 ## Metrics
 

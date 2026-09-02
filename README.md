@@ -75,6 +75,10 @@ InfoMamba/
 └── pyproject.toml
 ```
 
+## Food Fine-tuning
+
+See [Food Fine-tuning](docs/TRAINING_FOOD.md).
+
 ## Citation
 
 Citation metadata will be added with the accompanying paper release.
