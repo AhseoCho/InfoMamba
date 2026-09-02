@@ -12,7 +12,7 @@ classes. Both are computed across all examples, not averaged across batches.
 
 ## Release checklist
 
-- [ ] Released checkpoint assets are available from the GitHub Release.
+- [ ] Released checkpoint artifacts are available through the encrypted distribution link.
 - [ ] Exact architecture and inference dependency version recorded.
 - [ ] Clean-environment command produces `metrics.json` and `predictions.csv`.
 - [ ] Dataset split count and class ordering match the config.

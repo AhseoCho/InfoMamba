@@ -1,7 +1,7 @@
 # AG News Evaluation
 
-Download the AG News checkpoint from the [v0.2.0 release](https://github.com/AhseoCho/InfoMamba/releases).
-Obtain the standard AG News test CSV from an authorized dataset source. The file
+Obtain the AG News checkpoint from the [encrypted Baidu Netdisk share](https://pan.baidu.com/s/1n5Q1YrkpnhkT_9cHwlXnYw).
+Contact the authors for the extraction code. Obtain the standard AG News test CSV from an authorized dataset source. The file
 must contain `Class Index`, `Title`, and `Description` columns.
 
 ```bash

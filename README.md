@@ -38,7 +38,9 @@ python scripts/train_food.py \
 
 ## Model Weights
 
-[Food checkpoints](https://pan.baidu.com/s/1n5Q1YrkpnhkT_9cHwlXnYw) are available upon request. Please contact the authors for access.
+Checkpoints for Food-11, Food-101, and AG News are distributed through an
+[encrypted Baidu Netdisk share](https://pan.baidu.com/s/1n5Q1YrkpnhkT_9cHwlXnYw).
+Please contact the authors to obtain the extraction code.
 
 ## Evaluation
 
