@@ -75,6 +75,13 @@ InfoMamba/
 └── pyproject.toml
 ```
 
+## Food Fine-tuning
+
+An independently written Food-11 fine-tuning reference is available in
+[docs/TRAINING_FOOD.md](docs/TRAINING_FOOD.md). It imports a pretrained visual
+backbone as an external dependency and does not bundle that backbone's source
+code.
+
 ## Citation
 
 Citation metadata will be added with the accompanying paper release.

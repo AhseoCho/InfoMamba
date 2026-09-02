@@ -1,0 +1,9 @@
+# Public reference recipe. Select checkpoints by validation Top-1 only.
+backbone: mamba_vision_B_21k
+epochs: 40
+batch_size: 32
+learning_rate: 0.0003
+weight_decay: 0.05
+concepts: 32
+temperature: 1.0
+seed: 42
