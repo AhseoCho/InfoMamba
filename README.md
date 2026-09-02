@@ -2,7 +2,7 @@
 
 > **InfoMamba: Recovering Information Lost in Hidden-State Compression**
 
-**Resources:** [Data Preparation](docs/DATASETS.md) | [Evaluation](evaluation) | [Model Card](docs/MODEL_CARD.md)
+**Resources:** [Algorithm](models/train.py) | [Data Preparation](docs/DATASETS.md) | [Evaluation](evaluation) | [Model Card](docs/MODEL_CARD.md)
 
 ## Installation
 
@@ -24,16 +24,6 @@ python scripts/prepare_food101.py \
 python scripts/prepare_food11.py \
   --source /path/to/Food-11 \
   --output artifacts/data/Food-11
-```
-
-## Training
-
-```bash
-python scripts/train_food.py \
-  --data artifacts/data/Food-11 \
-  --output outputs/food11 \
-  --backbone mamba_vision_B_21k \
-  --epochs 40 --batch-size 32
 ```
 
 ## Model Weights
