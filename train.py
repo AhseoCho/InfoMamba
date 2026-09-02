@@ -1,8 +1,4 @@
-"""Pseudocode for the InfoMamba method described in the paper.
-
-This file presents the algorithmic structure and omits the data pipeline and
-distributed training details. It is not a checkpoint reproduction recipe.
-"""
+# Pseudocode for InfoMamba.
 
 
 def infomamba_block(tokens, recurrent_state, parameters):

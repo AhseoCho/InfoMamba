@@ -9,7 +9,6 @@
 InfoMamba provides released checkpoints and concise, reproducible evaluation
 workflows for visual and sequence classification tasks.
 
-Method pseudocode is available in [train.py](train.py).
 
 ## Getting Started
 
