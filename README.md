@@ -1,18 +1,10 @@
 # InfoMamba
 
 > **InfoMamba: Recovering Information Lost in Hidden-State Compression**
->
-> **Resources:** [Model Weights](https://github.com/AhseoCho/InfoMamba/releases) · [Data Preparation](docs/DATASETS.md) · [Evaluation](evaluation) · [Model Card](docs/MODEL_CARD.md)
 
-## About
+**Resources:** [Data Preparation](docs/DATASETS.md) | [Evaluation](evaluation) | [Model Card](docs/MODEL_CARD.md)
 
-InfoMamba provides released checkpoints and concise, reproducible evaluation
-workflows for visual and sequence classification tasks.
-
-
-## Getting Started
-
-### 1. Install Environment
+## Installation
 
 ```bash
 python -m venv .venv
@@ -20,10 +12,7 @@ source .venv/bin/activate
 pip install -e ".[food]"
 ```
 
-Install the compatible inference dependencies required by the released
-checkpoints.
-
-### 2. Prepare Data
+## Data Preparation
 
 ```bash
 # Food-101
@@ -37,9 +26,7 @@ python scripts/prepare_food11.py \
   --output artifacts/data/Food-11
 ```
 
-See [Dataset Preparation](docs/DATASETS.md) for the complete layouts.
-
-### 3. Train
+## Training
 
 ```bash
 python scripts/train_food.py \
@@ -49,12 +36,7 @@ python scripts/train_food.py \
   --epochs 40 --batch-size 32
 ```
 
-### 4. Download Checkpoints
-
-Download the required checkpoint from [Releases](https://github.com/AhseoCho/InfoMamba/releases)
-and place it under `artifacts/`.
-
-### 5. Run Evaluation
+## Evaluation
 
 ```bash
 # Food-11
@@ -72,25 +54,6 @@ python evaluation/agnews/evaluate.py \
   --output outputs/agnews
 ```
 
-## Repository Structure
-
-```text
-InfoMamba/
-├── docs/                    # usage and release documentation
-├── evaluation/
-│   ├── food/                # class orders and evaluation configurations
-│   └── agnews/              # sequence evaluation assets
-├── scripts/                 # dataset preparation
-├── src/                     # shared evaluation utilities
-├── LICENSE
-└── pyproject.toml
-```
-
-## Citation
-
-Citation metadata will be added with the accompanying paper release.
-
 ## License
 
-The evaluation code is released under the MIT License. Third-party notices are
-available in [THIRD_PARTY.md](LICENSES/THIRD_PARTY.md).
+InfoMamba-authored code is released under the MIT License. Third-party notices are available in [THIRD_PARTY.md](LICENSES/THIRD_PARTY.md).
