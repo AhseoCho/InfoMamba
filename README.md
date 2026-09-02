@@ -28,7 +28,7 @@ python scripts/prepare_food11.py \
 
 ## Model Weights
 
-Checkpoints for Food-11, Food-101, and AG News are distributed through an
+Checkpoints for Food-11 and Food-101 are distributed through an
 [encrypted Baidu Netdisk share](https://pan.baidu.com/s/1n5Q1YrkpnhkT_9cHwlXnYw).
 Please contact the authors to obtain the extraction code.
 
@@ -43,11 +43,6 @@ python -m infomamba_food_eval.evaluate \
   --model-factory models.released_food:build_food_model \
   --output outputs/food11
 
-# AG News
-python evaluation/agnews/evaluate.py \
-  --data /path/to/test.csv \
-  --checkpoint artifacts/infomamba_agnews.pt \
-  --output outputs/agnews
 ```
 
 ## License
