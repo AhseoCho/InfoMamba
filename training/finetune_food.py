@@ -12,7 +12,10 @@ from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 
-from training.infomamba_food import InfoMambaFoodClassifier
+try:
+    from training.infomamba_food import InfoMambaFoodClassifier
+except ModuleNotFoundError:  # Supports `python training/finetune_food.py`.
+    from infomamba_food import InfoMambaFoodClassifier
 
 
 def parse_args() -> argparse.Namespace:
