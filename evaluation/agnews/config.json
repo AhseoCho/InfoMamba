@@ -1,5 +1,4 @@
 {
-  "backbone": "microsoft/deberta-v3-base",
   "num_labels": 4,
   "max_length": 256,
   "label_columns": ["Class Index", "Title", "Description"]

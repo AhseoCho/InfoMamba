@@ -54,19 +54,20 @@ def main():
     parser.add_argument("--data", required=True, type=Path, help="Official AG News test CSV")
     parser.add_argument("--checkpoint", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--model", default="microsoft/deberta-v3-base")
+    parser.add_argument("--model", default=None, help="Optional override; by default the checkpoint metadata is used")
     parser.add_argument("--max-length", default=256, type=int)
     parser.add_argument("--batch-size", default=64, type=int)
     parser.add_argument("--workers", default=4, type=int)
     args = parser.parse_args()
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model, use_fast=False)
+    checkpoint = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
+    model_name = args.model or checkpoint.get("model")
+    if not model_name:
+        raise ValueError("Checkpoint does not specify an inference backbone")
+    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
     dataset = AGNewsDataset(args.data, tokenizer, args.max_length)
     loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False, num_workers=args.workers, pin_memory=True)
-    checkpoint = torch.load(args.checkpoint, map_location="cpu", weights_only=True)
-    if checkpoint.get("model") != args.model:
-        raise ValueError("Checkpoint backbone differs from --model")
-    model = InfoGateClassifier(args.model)
+    model = InfoGateClassifier(model_name)
     model.load_state_dict(checkpoint["state_dict"], strict=True)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device).eval()
@@ -78,7 +79,7 @@ def main():
             correct += (logits.argmax(-1) == labels).sum().item()
             total += labels.numel()
     args.output.mkdir(parents=True, exist_ok=True)
-    metrics = {"samples": total, "accuracy": 100.0 * correct / total, "checkpoint": args.checkpoint.name, "backbone": args.model}
+    metrics = {"samples": total, "accuracy": 100.0 * correct / total, "checkpoint": args.checkpoint.name}
     (args.output / "metrics.json").write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(metrics, indent=2))
 

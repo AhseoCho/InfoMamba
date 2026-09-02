@@ -5,7 +5,7 @@ Obtain the standard AG News test CSV from an authorized dataset source. The file
 must contain `Class Index`, `Title`, and `Description` columns.
 
 ```bash
-python agnews/evaluate.py \
+python evaluation/agnews/evaluate.py \
   --data /path/to/test.csv \
   --checkpoint artifacts/infomamba_agnews.pt \
   --output outputs/agnews
