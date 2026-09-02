@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+artifacts/
+data/
+outputs/
+*.pth
+*.pt
+*.pth.tar
+_private_weight_sync.py
+_private_remote.py
+_private_food11_repro.sh
+_private_food101_repro.sh
+weight_sync.log
+weight_sync.err.log
