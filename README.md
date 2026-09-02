@@ -2,7 +2,7 @@
 
 > **InfoMamba: Information-Gated State Space Models for Visual Recognition**
 >
-> **Resources:** [Model Weights](https://github.com/AhseoCho/InfoMamba/releases/tag/v0.1.0) · [Data Preparation](DATASETS.md) · [Evaluation](src/infomamba_food_eval/evaluate.py) · [Model Card](MODEL_CARD.md)
+> **Resources:** [Model Weights](https://github.com/AhseoCho/InfoMamba/releases) · [Data Preparation](DATASETS.md) · [Evaluation](src/infomamba_food_eval/evaluate.py) · [Model Card](MODEL_CARD.md)
 
 ## About
 
@@ -78,9 +78,11 @@ python -m infomamba_food_eval.evaluate \
 InfoMamba/
 ├── classes/                 # fixed class orders
 ├── configs/                 # evaluation configurations
+├── agnews/                  # AG News evaluation implementation
 ├── scripts/                 # dataset preparation
 ├── src/                     # evaluation implementation
 ├── DATASETS.md
+├── AGNEWS.md
 ├── MODEL_CARD.md
 └── LICENSE
 ```
