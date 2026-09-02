@@ -17,8 +17,7 @@ workflows for visual and sequence classification tasks.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -e .
-pip install mambavision
+pip install -e ".[food]"
 ```
 
 Install the compatible inference dependencies required by the released
@@ -63,7 +62,7 @@ python -m infomamba_food_eval.evaluate \
   --config evaluation/food/configs/food11.yaml \
   --data artifacts/data/Food-11/test \
   --checkpoint artifacts/infomamba_food11.pth.tar \
-  --model-factory <released-model-factory> \
+  --model-factory models.released_food:build_food_model \
   --output outputs/food11
 
 # AG News

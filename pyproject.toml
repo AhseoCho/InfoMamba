@@ -15,5 +15,8 @@ dependencies = [
   "transformers>=4.45",
 ]
 
+[project.optional-dependencies]
+food = ["mambavision"]
+
 [tool.setuptools.packages.find]
 where = ["src"]
