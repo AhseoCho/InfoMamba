@@ -1,6 +1,6 @@
 # InfoMamba
 
-> **InfoMamba: Information-Gated State Space Models for Visual Recognition**
+> **InfoMamba: Recovering Information Lost in Hidden-State Compression**
 >
 > **Resources:** [Model Weights](https://github.com/AhseoCho/InfoMamba/releases) · [Data Preparation](docs/DATASETS.md) · [Evaluation](evaluation) · [Model Card](docs/MODEL_CARD.md)
 

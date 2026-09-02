@@ -1,4 +1,4 @@
-# InfoMamba: Information-Gated State Space Models for Visual Recognition
+# InfoMamba: Recovering Information Lost in Hidden-State Compression
 
 ## Intended use
 
