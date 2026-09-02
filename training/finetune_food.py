@@ -1,4 +1,4 @@
-"""Fine-tune the public InfoMamba Food adapter without bundling upstream code."""
+"""Fine-tune InfoMamba for Food classification."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ from torchvision import datasets, transforms
 
 try:
     from training.infomamba_food import InfoMambaFoodClassifier
-except ModuleNotFoundError:  # Supports `python training/finetune_food.py`.
+except ModuleNotFoundError:
     from infomamba_food import InfoMambaFoodClassifier
 
 

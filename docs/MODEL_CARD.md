@@ -2,10 +2,8 @@
 
 ## Intended use
 
-Image classification evaluation on Food-11 and Food-101, together with a
-separate Food-11 reference fine-tuning recipe. The recipe uses an externally
-installed pretrained backbone; its source, weights, and license are not
-redistributed by this repository. See [Food fine-tuning](TRAINING_FOOD.md).
+Image classification evaluation on Food-11 and Food-101. Food-11 fine-tuning
+is documented in [Food fine-tuning](TRAINING_FOOD.md).
 
 ## Metrics
 

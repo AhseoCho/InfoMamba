@@ -1,4 +1,4 @@
-# Public reference recipe. Select checkpoints by validation Top-1 only.
+# Select checkpoints by validation Top-1 only.
 backbone: mamba_vision_B_21k
 epochs: 40
 batch_size: 32

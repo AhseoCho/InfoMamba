@@ -2,11 +2,9 @@
 
 ## External visual backbone
 
-The Food fine-tuning reference imports the external
-[NVlabs/MambaVision](https://github.com/NVlabs/MambaVision) package. Its source
-code, pretrained checkpoints, trademarks, and license are not redistributed by
-this repository. Users must obtain them from the upstream project and comply
-with the upstream license, including terms applicable to fine-tuned derivatives.
+Food fine-tuning uses [NVlabs/MambaVision](https://github.com/NVlabs/MambaVision)
+as an external dependency. Its source, checkpoints, and license remain subject
+to the upstream terms.
 
 ## Datasets and released artifacts
 

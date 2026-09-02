@@ -77,10 +77,7 @@ InfoMamba/
 
 ## Food Fine-tuning
 
-An independently written Food-11 fine-tuning reference is available in
-[docs/TRAINING_FOOD.md](docs/TRAINING_FOOD.md). It imports a pretrained visual
-backbone as an external dependency and does not bundle that backbone's source
-code.
+See [Food Fine-tuning](docs/TRAINING_FOOD.md) for the Food-11 training command.
 
 ## Citation
 

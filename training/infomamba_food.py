@@ -1,9 +1,4 @@
-"""Original InfoMamba classification adapter built on an external backbone.
-
-This module imports the backbone as a dependency and contains no source copied
-from that project. It is a public reference fine-tuning implementation, not a
-serialization-compatible definition of historical release checkpoints.
-"""
+"""InfoMamba classifier for Food fine-tuning."""
 
 from __future__ import annotations
 
@@ -12,7 +7,7 @@ from torch import Tensor, nn
 
 
 class ConceptReadout(nn.Module):
-    """Pool spatial features through a small learned concept bank."""
+    """Concept readout over spatial features."""
 
     def __init__(self, dim: int, num_concepts: int = 32, temperature: float = 1.0):
         super().__init__()
@@ -40,7 +35,7 @@ class ConceptReadout(nn.Module):
 
 
 class InfoMambaFoodClassifier(nn.Module):
-    """External pretrained visual backbone plus the public concept readout."""
+    """Pretrained visual backbone with a concept readout."""
 
     def __init__(self, backbone_name: str, num_classes: int, num_concepts: int = 32,
                  temperature: float = 1.0, pretrained: bool = True,
