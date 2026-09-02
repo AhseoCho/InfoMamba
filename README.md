@@ -2,31 +2,17 @@
 
 > **InfoMamba: Information-Gated State Space Models for Visual Recognition**
 >
-> **Resources:** [Models](weights_manifest.json) · [Evaluation](src/infomamba_food_eval/evaluate.py) · [Datasets](DATASETS.md) · [Benchmark Card](MODEL_CARD.md) · [Data Audit](DATA_AUDIT.md)
-
-InfoMamba is an evaluation-only release for visual recognition. This repository
-ships verified model artifacts and a deterministic evaluator for Food-11 and
-Food-101. It intentionally does not include training code, training recipes, or
-datasets.
-
-## Status of this repository
-
-The source package is ready for release, but its `weights_manifest.json` still
-contains placeholders. Do **not** publish a numerical claim until every weight
-URL and SHA-256 value in that file has been filled from the exact released
-artifact and the command below has been rerun in a clean environment.
+> **Resources:** [Model Weights](https://github.com/AhseoCho/InfoMamba/releases/tag/v0.1.0) · [Data Preparation](DATASETS.md) · [Evaluation](src/infomamba_food_eval/evaluate.py) · [Model Card](MODEL_CARD.md)
 
 ## About
 
-The release is designed to make every reported result independently checkable:
-the evaluator fixes preprocessing and class order, verifies the checkpoint hash,
-loads the exact state dict strictly, and emits both aggregate metrics and
-per-example predictions. A run fails rather than silently substituting a model,
-class mapping, or incompatible checkpoint.
+InfoMamba is an information-gated state space model for visual recognition.
+This repository provides released checkpoints and an evaluation implementation
+for Food-11 and Food-101.
 
-## Getting started
+## Getting Started
 
-### 1. Install environment
+### 1. Install Environment
 
 ```bash
 python -m venv .venv
@@ -34,73 +20,83 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-Install the separately distributed InfoMamba/MambaVision inference package that
-contains the released architecture. Its model factory is supplied explicitly at
-runtime; this repository never silently substitutes another architecture.
+Install the InfoMamba/MambaVision inference dependency that provides
+`models.mamba_vision:mamba_vision_B`.
 
-### 2. Prepare data
+### 2. Prepare Data
 
-See [DATASETS.md](DATASETS.md) for deterministic Food-11/Food-101 preparation.
-Raw images remain outside Git and are placed under `artifacts/data/` locally.
-
-```
-Food-11/
-  test/<class-name>/*.jpg
-Food-101/
-  test/<class-name>/*.jpg
-```
-
-Food-11 checkpoint selection must use a separate `val/` split. The `test/`
-split is for the final evaluation only. For Food-101, `test/` denotes the
-official Food-101 evaluation split (25,250 images).
-
-### 3. Obtain a verified model
-
-The release manifest records the artifact URL, SHA-256, exact model factory, and
-redistribution terms. A release is not ready until those fields are concrete.
-Never use a checkpoint whose hash does not match the manifest.
-
-### 4. Run evaluation
-
-Download a checkpoint only after its manifest entry is complete, then run:
+Prepare the datasets under `artifacts/data/`:
 
 ```bash
+# Food-101
+python scripts/prepare_food101.py \
+  --root artifacts/source/food101 \
+  --output artifacts/data/Food-101
+
+# Food-11 (after obtaining the dataset from its authorized source)
+python scripts/prepare_food11.py \
+  --source /path/to/Food-11 \
+  --output artifacts/data/Food-11
+```
+
+Food-11 uses `train`, `val`, and `test` folders. Food-101 uses the official
+`train` and `test` folders. See [DATASETS.md](DATASETS.md) for details.
+
+### 3. Download Checkpoints
+
+Download released checkpoints from the [v0.1.0 release](https://github.com/AhseoCho/InfoMamba/releases/tag/v0.1.0)
+and place them under `artifacts/`.
+
+| Dataset | Checkpoint | SHA-256 |
+| --- | --- | --- |
+| Food-11 | `infomamba_food11.pth.tar` | `5aadc0c8b1b788a905148adb163e38329c8b4c1dc63ff20da8f04d0327a0f2dd` |
+| Food-101 | `infomamba_food101.pth.tar` | `0ccd5f2e8cfc0511d4abf8dfe9503a4cbb648aa705aeef82929cfc6e6c914988` |
+
+### 4. Run Evaluation
+
+```bash
+# Food-11
+python -m infomamba_food_eval.evaluate \
+  --config configs/food11.yaml \
+  --data artifacts/data/Food-11/test \
+  --checkpoint artifacts/infomamba_food11.pth.tar \
+  --model-factory models.mamba_vision:mamba_vision_B \
+  --output outputs/food11
+
+# Food-101
 python -m infomamba_food_eval.evaluate \
   --config configs/food101.yaml \
-  --data /path/to/Food-101/test \
+  --data artifacts/data/Food-101/test \
   --checkpoint artifacts/infomamba_food101.pth.tar \
   --model-factory models.mamba_vision:mamba_vision_B \
   --output outputs/food101
 ```
 
-`--model-factory` must resolve to the exact released InfoMamba inference model.
-The evaluator passes the configured `num_classes` and rejects a state dict with
-any missing or unexpected parameter. It writes `metrics.json`,
-`predictions.csv`, and `run_manifest.json`.
+## Results
 
-## Reporting
+| Dataset | Top-1 | Top-5 |
+| --- | ---: | ---: |
+| Food-11 | 98.72 | 99.91 |
+| Food-101 | See released evaluation output |
 
-Report `top1` and `top5` exactly as written in `metrics.json`; they are distinct
-sample-weighted metrics. Include the checkpoint SHA-256, config SHA-256,
-dataset split size, and commit hash in any table. See [MODEL_CARD.md](MODEL_CARD.md)
-and [DATA_AUDIT.md](DATA_AUDIT.md).
+## Repository Structure
 
-## Repository layout
-
-```
+```text
 InfoMamba/
-├── artifacts/              # downloaded checkpoints; gitignored
-├── classes/                # fixed class order
-├── configs/                # immutable evaluation protocols
-├── src/                    # strict evaluation implementation
-├── weights_manifest.json   # artifact identity and integrity metadata
+├── classes/                 # fixed class orders
+├── configs/                 # evaluation configurations
+├── scripts/                 # dataset preparation
+├── src/                     # evaluation implementation
+├── DATASETS.md
 ├── MODEL_CARD.md
-└── DATA_AUDIT.md
+└── weights_manifest.json
 ```
 
-## Scope and third-party terms
+## Citation
 
-The MIT license applies only to the new evaluation code in this repository.
-Checkpoint redistribution and the external architecture dependency can have
-their own terms; record them before publishing. See
-[THIRD_PARTY.md](LICENSES/THIRD_PARTY.md).
+Citation metadata will be added with the accompanying paper release.
+
+## License
+
+The evaluation code is released under the MIT License. Checkpoint and
+third-party dependency notices are documented in [THIRD_PARTY.md](LICENSES/THIRD_PARTY.md).

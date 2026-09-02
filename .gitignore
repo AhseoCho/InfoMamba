@@ -11,5 +11,10 @@ _private_weight_sync.py
 _private_remote.py
 _private_food11_repro.sh
 _private_food101_repro.sh
+_private_release_upload.py
+release_upload.log
+release_upload.err.log
+_private_server_release_upload.py
+_private_upload_runner.py
 weight_sync.log
 weight_sync.err.log

@@ -1,20 +1,20 @@
 {
-  "release_status": "LOCAL_ARTIFACTS_VERIFIED_NOT_YET_PUBLISHED",
-  "instructions": "The local files and hashes below were verified against the originating server. Add public URLs and redistribution terms before publishing a release.",
+  "release_status": "PUBLISHED",
+  "release_url": "https://github.com/AhseoCho/InfoMamba/releases/tag/v0.1.0",
   "weights": {
     "food11": {
       "local_path": "artifacts/infomamba_food11.pth.tar",
-      "url": "REPLACE_WITH_PUBLIC_RELEASE_URL",
+      "url": "https://github.com/AhseoCho/InfoMamba/releases/download/v0.1.0/infomamba_food11.pth.tar",
       "sha256": "5aadc0c8b1b788a905148adb163e38329c8b4c1dc63ff20da8f04d0327a0f2dd",
       "model_factory": "models.mamba_vision:mamba_vision_B",
-      "license": "REPLACE_BEFORE_RELEASE"
+      "license": "See LICENSES/THIRD_PARTY.md"
     },
     "food101": {
       "local_path": "artifacts/infomamba_food101.pth.tar",
-      "url": "REPLACE_WITH_PUBLIC_RELEASE_URL",
+      "url": "https://github.com/AhseoCho/InfoMamba/releases/download/v0.1.0/infomamba_food101.pth.tar",
       "sha256": "0ccd5f2e8cfc0511d4abf8dfe9503a4cbb648aa705aeef82929cfc6e6c914988",
       "model_factory": "models.mamba_vision:mamba_vision_B",
-      "license": "REPLACE_BEFORE_RELEASE"
+      "license": "See LICENSES/THIRD_PARTY.md"
     }
   }
 }
