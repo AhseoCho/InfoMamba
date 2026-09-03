@@ -51,6 +51,9 @@ Training and evaluation commands are in [agnews/README.md](agnews/README.md).
 AG News checkpoints are distributed separately through the authors' encrypted
 Baidu Netdisk share; please contact the authors for access.
 
+The public training entry point uses a 40-epoch budget and retains the
+checkpoint selected on the validation split.
+
 ## License
 
 InfoMamba-authored code is released under the MIT License. Third-party notices are available in [THIRD_PARTY.md](LICENSES/THIRD_PARTY.md).

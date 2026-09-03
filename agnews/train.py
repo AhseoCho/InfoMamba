@@ -129,7 +129,7 @@ def main() -> None:
     parser.add_argument("--base-model", default="state-spaces/mamba-130m-hf")
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--evaluate-only", action="store_true")
-    parser.add_argument("--epochs", type=int, default=6)
+    parser.add_argument("--epochs", type=int, default=40)
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--grad-accum", type=int, default=4)
     parser.add_argument("--lr", type=float, default=8e-5)

@@ -16,7 +16,7 @@ pip install -e ".[agnews]"
 python agnews/train.py \
   --output outputs/agnews \
   --base-model state-spaces/mamba-130m-hf \
-  --epochs 6 --batch-size 8 --grad-accum 4 --lr 8e-5 \
+  --epochs 40 --batch-size 8 --grad-accum 4 --lr 8e-5 \
   --seed 42 --unfreeze-last-n 4 --position-aware-routing
 ```
 
