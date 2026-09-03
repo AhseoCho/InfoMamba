@@ -1,9 +1,8 @@
 # AG News
 
-This directory contains the AG News implementation used with the public
-Mamba-130M language-model backbone. The concept path applies token-to-concept
-routing, concept-space attention, and pre-/post-block residual projections at
-layers 5, 11, 17, and 23.
+This directory contains the AG News training and evaluation entry point. The
+concept path uses token-to-concept routing, concept-space attention, and
+pre-/post-block residual projections at layers 5, 11, 17, and 23.
 
 ## Install
 
@@ -37,5 +36,5 @@ python agnews/train.py \
 
 The AG News checkpoint is distributed separately through the authors'
 encrypted Baidu Netdisk share. It is an adapter checkpoint and requires the
-public `state-spaces/mamba-130m-hf` base model named in the command above.
-Please contact the authors for access.
+base model specified in the command above. Please contact the authors for
+access.
