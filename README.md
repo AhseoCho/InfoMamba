@@ -2,7 +2,7 @@
 
 > **InfoMamba: Recovering Information Lost in Hidden-State Compression**
 
-**Resources:** [Algorithm](models/train.py) | [Data Preparation](docs/DATASETS.md) | [Evaluation](evaluation) | [Model Card](docs/MODEL_CARD.md)
+**Resources:** [Algorithm](models/train.py) | [Food data preparation](docs/DATASETS.md) | [Food evaluation](evaluation) | [AG News](agnews/README.md) | [Model card](docs/MODEL_CARD.md)
 
 ## Installation
 
@@ -44,6 +44,14 @@ python -m infomamba_food_eval.evaluate \
   --output outputs/food11
 
 ```
+
+## AG News
+
+The AG News implementation uses the public `state-spaces/mamba-130m-hf`
+backbone with the concept-repair module. Installation and commands are in
+[agnews/README.md](agnews/README.md). AG News checkpoints are distributed
+separately through the authors' encrypted Baidu Netdisk share; please contact
+the authors for access.
 
 ## License
 

@@ -7,6 +7,8 @@ outputs/
 *.pth
 *.pt
 *.pth.tar
+*.safetensors
+*.bin
 _private_weight_sync.py
 weight_sync.log
 weight_sync.err.log

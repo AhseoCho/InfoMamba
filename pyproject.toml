@@ -13,10 +13,12 @@ dependencies = [
   "PyYAML>=6.0",
   "Pillow>=10.0",
   "transformers>=4.45",
+  "datasets>=2.19",
 ]
 
 [project.optional-dependencies]
 food = ["mambavision"]
+agnews = ["mamba-ssm>=2.2", "causal-conv1d>=1.4"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
