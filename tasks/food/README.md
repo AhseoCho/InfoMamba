@@ -11,7 +11,7 @@ official `train` and `test` splits. This release materializes them as ImageFolde
 directories without changing their memberships:
 
 ```bash
-python scripts/prepare_food101.py \
+python tasks/food/prepare_food101.py \
   --root artifacts/source/food101 \
   --output artifacts/data/Food-101
 ```
@@ -25,7 +25,7 @@ Obtain Food-11 from an authorized upstream source and organize it as
 `train/`, `val/`, and `test/`, with eleven class folders in every split. Then:
 
 ```bash
-python scripts/prepare_food11.py \
+python tasks/food/prepare_food11.py \
   --source /path/to/authorized/Food-11 \
   --output artifacts/data/Food-11
 ```

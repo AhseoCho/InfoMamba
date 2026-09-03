@@ -13,7 +13,7 @@ pip install -e ".[agnews]"
 ## Train
 
 ```bash
-python agnews/train.py \
+python tasks/agnews/train.py \
   --output outputs/agnews \
   --base-model state-spaces/mamba-130m-hf \
   --epochs 40 --batch-size 8 --grad-accum 4 --lr 8e-5 \
@@ -27,7 +27,7 @@ selected checkpoint once on the official test set.
 ## Evaluate a checkpoint
 
 ```bash
-python agnews/train.py \
+python tasks/agnews/train.py \
   --output outputs/agnews_eval \
   --base-model state-spaces/mamba-130m-hf \
   --checkpoint /path/to/infomamba_agnews_mamba130.pt \

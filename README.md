@@ -2,7 +2,7 @@
 
 > **InfoMamba: Recovering Information Lost in Hidden-State Compression**
 
-**Resources:** [Algorithm](models/train.py) · [Datasets](docs/DATASETS.md) · [Food evaluation](evaluation) · [AG News](agnews/README.md) · [Model card](docs/MODEL_CARD.md)
+**Resources:** [Algorithm](models/train.py) | [Tasks](tasks/README.md) | [Model card](docs/MODEL_CARD.md)
 
 ## Installation
 
@@ -12,19 +12,10 @@ source .venv/bin/activate
 pip install -e ".[food]"
 ```
 
-## Data Preparation
+## Tasks
 
-```bash
-# Food-101
-python scripts/prepare_food101.py \
-  --root artifacts/source/food101 \
-  --output artifacts/data/Food-101
-
-# Food-11
-python scripts/prepare_food11.py \
-  --source /path/to/Food-11 \
-  --output artifacts/data/Food-11
-```
+Task-specific preparation, training, and evaluation instructions are collected
+in [tasks/](tasks/README.md).
 
 ## Checkpoints
 
@@ -37,7 +28,7 @@ Please contact the authors to obtain the extraction code.
 ```bash
 # Food-11
 python -m infomamba_food_eval.evaluate \
-  --config evaluation/food/configs/food11.yaml \
+  --config tasks/food/evaluation/configs/food11.yaml \
   --data artifacts/data/Food-11/test \
   --checkpoint artifacts/infomamba_food11.pth.tar \
   --model-factory models.released_food:build_food_model \
@@ -47,7 +38,7 @@ python -m infomamba_food_eval.evaluate \
 
 ## AG News
 
-Training and evaluation commands are in [agnews/README.md](agnews/README.md).
+Training and evaluation commands are in [tasks/agnews/README.md](tasks/agnews/README.md).
 AG News checkpoints are distributed separately through the authors' encrypted
 Baidu Netdisk share; please contact the authors for access.
 
