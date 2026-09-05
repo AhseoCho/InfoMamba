@@ -23,8 +23,14 @@ Each task page contains its own commands and configuration files.
 
 ## Checkpoints
 
-Checkpoints are distributed separately through the authors' encrypted Baidu
-Netdisk share. Please contact the authors for access.
+| Resource | Download | Access |
+| --- | --- | --- |
+| InfoMamba checkpoints | [Baidu Netdisk](https://pan.baidu.com/s/1n5Q1YrkpnhkT_9cHwlXnYw) | Extraction code available from the authors. |
+| Food-11 / Food-101 data preparation | [Task resources](tasks/food/README.md) | Follow the dataset preparation instructions. |
+| AG News data preparation | [Task resources](tasks/agnews/README.md) | Follow the dataset preparation instructions. |
+
+The Netdisk share is password-protected. Please contact the authors to obtain
+the extraction code; do not publish it in issues, forks, or mirrors.
 
 ## Repository structure
 
