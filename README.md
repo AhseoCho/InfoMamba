@@ -16,21 +16,34 @@ pip install -e ".[food,agnews]"
 
 | Task | Resources |
 | --- | --- |
-| Food-11 / Food-101 | [Preparation and evaluation](tasks/food/README.md) |
+| Food-11 / Food-101 | [Preparation, training, and evaluation](tasks/food/README.md) |
 | AG News | [Training and evaluation](tasks/agnews/README.md) |
 
 Each task page contains its own commands and configuration files.
 
+## Food benchmarks
+
+Prepare Food-11 or Food-101 following the instructions in
+[tasks/food](tasks/food/README.md). The compact training implementation is in
+[models/train.py](models/train.py); the Food-11 training configuration is
+[tasks/food/training_food11.yaml](tasks/food/training_food11.yaml).
+
+Evaluate a released Food checkpoint with:
+
+```bash
+python -m infomamba_food_eval.evaluate \
+  --config tasks/food/evaluation/configs/food11.yaml \
+  --data artifacts/data/Food-11/test \
+  --checkpoint /path/to/infomamba_food11.pth \
+  --model-factory models.released_food:build_food_model \
+  --output outputs/food11_eval
+```
+
 ## Checkpoints
 
-| Resource | Download | Access |
-| --- | --- | --- |
-| InfoMamba checkpoints | [Baidu Netdisk](https://pan.baidu.com/s/1n5Q1YrkpnhkT_9cHwlXnYw) | Extraction code available from the authors. |
-| Food-11 / Food-101 data preparation | [Task resources](tasks/food/README.md) | Follow the dataset preparation instructions. |
-| AG News data preparation | [Task resources](tasks/agnews/README.md) | Follow the dataset preparation instructions. |
-
-The Netdisk share is password-protected. Please contact the authors to obtain
-the extraction code; do not publish it in issues, forks, or mirrors.
+Checkpoints are distributed through the authors' password-protected [Baidu
+Netdisk share](https://pan.baidu.com/s/1n5Q1YrkpnhkT_9cHwlXnYw). Please contact
+the authors for the extraction code.
 
 ## Repository structure
 

@@ -34,6 +34,24 @@ The script checks that all three splits have the same eleven class names and
 uses hard links by default. Use `--link-mode copy` where hard links are not
 available.
 
+## Training
+
+The compact InfoMamba training reference is
+[`models/train.py`](../../models/train.py). The Food-11 configuration is
+[`training_food11.yaml`](training_food11.yaml). It specifies the backbone,
+optimization settings, and 40-epoch schedule used for the Food experiment.
+
+## Evaluation
+
+```bash
+python -m infomamba_food_eval.evaluate \
+  --config tasks/food/evaluation/configs/food11.yaml \
+  --data artifacts/data/Food-11/test \
+  --checkpoint /path/to/infomamba_food11.pth \
+  --model-factory models.released_food:build_food_model \
+  --output outputs/food11_eval
+```
+
 ## Integrity and benchmark rules
 
 - Do not select a Food-11 checkpoint using the test split.
