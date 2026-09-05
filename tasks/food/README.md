@@ -36,10 +36,8 @@ available.
 
 ## Training
 
-The compact InfoMamba training reference is
-[`models/train.py`](../../models/train.py). The Food-11 configuration is
-[`training_food11.yaml`](training_food11.yaml). It specifies the backbone,
-optimization settings, and 40-epoch schedule used for the Food experiment.
+The training reference is [`models/train.py`](../../models/train.py). The
+Food-11 configuration is [`training_food11.yaml`](training_food11.yaml).
 
 ## Evaluation
 

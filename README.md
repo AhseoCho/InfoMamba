@@ -23,9 +23,9 @@ Each task page contains its own commands and configuration files.
 
 ## Food benchmarks
 
-Prepare Food-11 or Food-101 following the instructions in
-[tasks/food](tasks/food/README.md). The compact training implementation is in
-[models/train.py](models/train.py); the Food-11 training configuration is
+Food-11 and Food-101 preparation, training, and evaluation instructions are
+available in [tasks/food](tasks/food/README.md). The training reference is in
+[models/train.py](models/train.py), with the Food-11 configuration in
 [tasks/food/training_food11.yaml](tasks/food/training_food11.yaml).
 
 Evaluate a released Food checkpoint with:
@@ -41,9 +41,8 @@ python -m infomamba_food_eval.evaluate \
 
 ## Checkpoints
 
-Checkpoints are distributed through the authors' password-protected [Baidu
-Netdisk share](https://pan.baidu.com/s/1n5Q1YrkpnhkT_9cHwlXnYw). Please contact
-the authors for the extraction code.
+Checkpoints are available from [Baidu Netdisk](https://pan.baidu.com/s/1n5Q1YrkpnhkT_9cHwlXnYw).
+For the extraction code, please contact the authors.
 
 ## Repository structure
 
